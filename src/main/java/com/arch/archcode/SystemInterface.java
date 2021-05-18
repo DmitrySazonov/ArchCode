@@ -5,10 +5,12 @@ import com.arch.archcode.enums.Technology;
 public class SystemInterface {
     private String name;
     private Technology technology;
+    private final System owner;
 
-    public SystemInterface(String name, Technology technology) {
+    public SystemInterface(String name, Technology technology, System owner) {
         this.name = name;
         this.technology = technology;
+        this.owner = owner;
     }
 
     public String getName() {
@@ -26,4 +28,9 @@ public class SystemInterface {
     public void setTechnology(Technology technology) {
         this.technology = technology;
     }
+
+    public System getOwner() {
+        return owner;
+    }
+
 }

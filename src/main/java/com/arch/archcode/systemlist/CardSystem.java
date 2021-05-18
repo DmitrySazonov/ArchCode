@@ -13,10 +13,10 @@ public class CardSystem extends System {
     }
 
     public SystemInterface getCard() {
-        return new SystemInterface("Поиск карты", Technology.SOAP_WS);
+        return new SystemInterface("Поиск карты", Technology.SOAP_WS, this);
     }
 
     public SystemInterface setPIN() {
-        return new SystemInterface("Активация карты и установка ПИН кода", Technology.SOAP_WS);
+        return new SystemInterface("Активация карты и установка ПИН кода", Technology.SOAP_WS, this);
     }
 }

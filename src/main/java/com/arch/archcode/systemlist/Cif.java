@@ -14,6 +14,6 @@ public class Cif extends System {
     }
 
     public SystemInterface getCustomer() {
-        return new SystemInterface("Поиск клиента", Technology.SOAP_WS);
+        return new SystemInterface("Поиск клиента", Technology.SOAP_WS, this);
     }
 }

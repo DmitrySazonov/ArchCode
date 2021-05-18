@@ -13,6 +13,7 @@ public class Mfm extends System {
     }
 
     public SystemInterface sendMessage() {
-        return new SystemInterface("Отправка смс", Technology.MQ);
+        return new SystemInterface("Отправка смс", Technology.MQ, this);
     }
+
 }

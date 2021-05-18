@@ -14,14 +14,14 @@ public class CardActivator extends System {
     }
 
     public SystemInterface activations() {
-        return new SystemInterface("/activations", Technology.REST_HTTP);
+        return new SystemInterface("/activations", Technology.REST_HTTP, this);
     }
 
     public SystemInterface activationsResend() {
-        return new SystemInterface("/activations/resend", Technology.REST_HTTP);
+        return new SystemInterface("/activations/resend", Technology.REST_HTTP, this);
     }
 
     public SystemInterface activationsCode() {
-        return new SystemInterface("/activations/code", Technology.REST_HTTP);
+        return new SystemInterface("/activations/code", Technology.REST_HTTP, this);
     }
 }
