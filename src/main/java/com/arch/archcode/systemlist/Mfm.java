@@ -7,7 +7,7 @@ import com.arch.archcode.enums.Technology;
 
 public class Mfm extends System {
     public Mfm() {
-        this.setName("Система отправки уведомлений по смс");
+        this.setName("MFM");
         this.setId("150");
         this.setSystemType(SystemType.BACK);
     }

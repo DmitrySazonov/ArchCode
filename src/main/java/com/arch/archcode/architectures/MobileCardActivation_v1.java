@@ -8,7 +8,7 @@ import com.arch.archcode.systemlist.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardActivation_v1 extends AbstractArch {
+public class MobileCardActivation_v1 extends AbstractArch {
     @Override
     public Architecture get() {
 
@@ -17,30 +17,24 @@ public class CardActivation_v1 extends AbstractArch {
 
         List<Flow> flows = new ArrayList<>();
 
-        //SITE -> CardActivator
+        //MB -> CardActivator
         flows.add(new Flow(
-                new Site(),
-                new CardActivator().activations(),
-                "Поиск по номеру телефона и части pan карты"
+                new MobileBank(),
+                new CardActivator().activationsMb(),
+                "Создание сессии"
         ));
 
         flows.add(new Flow(
-                new Site(),
+                new MobileBank(),
                 new CardActivator().activationsResend(),
                 "Повторная отпрака смс"
         ));
 
 
         flows.add(new Flow(
-                new Site(),
+                new MobileBank(),
                 new CardActivator().activationsCode(),
                 "Проверка смс кода и активация карты"
-        ));
-
-        //CardActivator -> CIF
-        flows.add(new Flow(
-                new CardActivator(),
-                new Cif().getCustomer()
         ));
 
         //CardActivator -> CardSystem
@@ -52,6 +46,11 @@ public class CardActivation_v1 extends AbstractArch {
         flows.add(new Flow(
                 new CardActivator(),
                 new CardSystem().setPIN()
+        ));
+
+        flows.add(new Flow(
+                new CardActivator(),
+                new CardSystem().changePIN()
         ));
 
         //CardActivator -> MFM

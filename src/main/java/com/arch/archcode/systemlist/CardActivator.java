@@ -8,13 +8,17 @@ import com.arch.archcode.enums.Technology;
 public class CardActivator extends System {
 
     public CardActivator() {
-        this.setName("Сервис активации карты для лендинга на сайте");
+        this.setName("CardActivator");
         this.setId("1001");
         this.setSystemType(SystemType.MIDDLE);
     }
 
     public SystemInterface activations() {
         return new SystemInterface("/activations", Technology.REST_HTTP, this);
+    }
+
+    public SystemInterface activationsMb() {
+        return new SystemInterface("/activationsMb", Technology.REST_HTTP, this);
     }
 
     public SystemInterface activationsResend() {

@@ -8,7 +8,7 @@ import com.arch.archcode.enums.Technology;
 public class Cif extends System {
 
     public Cif() {
-        this.setName("MDM по клиентам");
+        this.setName("CIF");
         this.setId("100");
         this.setSystemType(SystemType.BACK);
     }

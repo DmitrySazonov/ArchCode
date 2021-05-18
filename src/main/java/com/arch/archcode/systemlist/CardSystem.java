@@ -19,4 +19,8 @@ public class CardSystem extends System {
     public SystemInterface setPIN() {
         return new SystemInterface("Активация карты и установка ПИН кода", Technology.SOAP_WS, this);
     }
+
+    public SystemInterface changePIN() {
+        return new SystemInterface("Изменение ПИН кода", Technology.SOAP_WS, this);
+    }
 }
